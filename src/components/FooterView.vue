@@ -10,9 +10,11 @@
       >
       <div class="policy-details">
         <li class="terms">
+          •
           <a class="icon-text" :style="'color:' + text_color">Términos y Condiciones </a>
         </li>
         <li class="terms">
+          •
           <a class="icon-text" :style="'color:' + text_color">Políticas de Privacidad </a>
         </li>
       </div>
@@ -36,10 +38,13 @@ export default {
 }
 </script>
 <style scoped>
+.terms {
+  list-style-type: none;
+}
+
 .policy-details {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  gap: 16px;
 }
 
 .icon-text {
@@ -54,7 +59,8 @@ export default {
 }
 .tm-footer-logo img {
   /* filter: invert(100%) brightness(0); */
-  height: 72px;
+  /* height: 72px; */
+  height: 50px;
   max-width: 100%;
 }
 .tm-footer-text {
@@ -74,6 +80,10 @@ export default {
   .tm-footer-text {
     max-width: 100%;
     text-align: justify;
+  }
+
+  .policy-details {
+    flex-direction: column;
   }
 }
 </style>

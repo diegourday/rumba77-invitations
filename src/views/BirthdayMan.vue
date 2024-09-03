@@ -12,49 +12,53 @@
         alt="Luces Derecha"
       />
     </div>
-    <header class="invite__header">
-      <p class="invite__text">Te invito a mi cumpleaños</p>
-      <h1 class="invite__name">Jhonatan Echaccaya</h1>
-      <div class="invite__wrap">
+
+    <section class="invite__header">
+      <div>
+        <p class="invite__text invite__text--header">Te invito a mi cumpleaños</p>
+        <h1 class="invite__name">Jhonatan Echaccaya</h1>
+      </div>
+      <div class="invite__event-details">
+        <div></div>
         <div>
           <p class="invite__text invite__text--celebrar">Se celebrará</p>
           <p class="invite__date">Martes 04 de Marzo | 5:30 pm</p>
         </div>
         <img
-          class="invite__image"
+          class="invite__image invite__image--main"
           src="../assets/img/event/birthday_man/main-img.svg"
           alt="Celebración"
         />
       </div>
-    </header>
+    </section>
 
     <!-- <button class="invite__button invite__button--gift">
-      <img src="../assets/img/event/birthday_man/gift-icon.svg" alt="Luces Derecha" />
+      <img src="../assets/img/event/birthday_man/gift-icon.svg" alt="Regalos" />
       <p>Lista de Regalos</p>
     </button> -->
 
-    <div class="invite__profile">
+    <section class="invite__profile">
       <h2 class="invite__subtitle">¡Te invito!</h2>
-      <div class="invite__profile-wrap">
+      <div class="invite__profile-content">
         <img
           class="invite__profile-img"
           src="../assets/img/event/birthday_man/man-img.jpg"
-          alt="Luces Derecha"
+          alt="Perfil"
         />
         <p class="invite__profile-text">
           Hola, ya llega el gran día y esperamos que nos puedan acompañar en este día tan lindo.
           Aquí podrán encontrar toda la información del evento.
         </p>
       </div>
-    </div>
+    </section>
 
-    <div class="invite__countdown">
+    <section class="invite__countdown">
       <img
         class="invite__countdown-img"
         src="../assets/img/event/birthday_man/stopwatch.svg"
         alt="Cronómetro"
       />
-    </div>
+    </section>
 
     <!-- <div class="invite__countdown">
       <p class="invite__countdown-text">Faltan</p>
@@ -66,22 +70,35 @@
       </div>
     </div> -->
 
-    <div class="invite__address">
+    <section class="invite__address">
       <p class="invite__address-title">Dirección</p>
-      <p class="invite__address-text">Av. Juan Pardo de Zela N° 4800 Lima - Lince - Perú</p>
-    </div>
+      <div class="invite__address-text">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#ffffff"
+        >
+          <path
+            d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"
+          />
+        </svg>
+        <p>Av. Juan Pardo de Zela N° 4800 Lima - Lince - Perú</p>
+      </div>
+    </section>
 
-    <div class="invite__countdown">
+    <section class="invite__countdown">
       <img
-        class="invite__countdown-img"
+        class="invite__countdown-img invite__countdown-img--cup"
         src="../assets/img/event/birthday_man/cup.svg"
         alt="Copa"
       />
-    </div>
+    </section>
 
-    <div class="invite__info">
+    <section class="invite__info">
       <h2 class="invite__subtitle">Más información</h2>
-      <div class="invite__info-wrapper">
+      <div class="invite__info-content">
         <article class="invite__info-card">
           <img src="../assets/img/othericons/men-suit-accesories.svg" />
           <span>Vestimenta</span>
@@ -95,11 +112,11 @@
           <span>Mascota</span>
         </article>
       </div>
-    </div>
+    </section>
 
-    <div class="invite__photos">
+    <section class="invite__photos">
       <h2 class="invite__subtitle">Mis fotos</h2>
-      <div class="invite__photos-wrapper">
+      <div class="invite__photos-content">
         <img
           class="invite__photos-card"
           src="../assets/img/event/birthday_man/man-photo.jpeg"
@@ -118,15 +135,15 @@
         <img
           class="invite__photos-card"
           src="../assets/img/event/birthday_man/man-photo.jpeg"
-          alt="Foto 3"
+          alt="Foto 4"
         />
         <img
           class="invite__photos-card"
           src="../assets/img/event/birthday_man/man-photo.jpeg"
-          alt="Foto 3"
+          alt="Foto 5"
         />
       </div>
-    </div>
+    </section>
 
     <footer-view
       :logo_color="'#ffffff'"
@@ -171,7 +188,10 @@ export default {
 
 .invite__header {
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 0;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
 }
 
 .invite__lights {
@@ -189,7 +209,7 @@ export default {
   right: 0;
 }
 
-.invite__text {
+.invite__text--header {
   font-size: 1.25rem;
 }
 
@@ -200,13 +220,14 @@ export default {
 .invite__name {
   font-size: 1.75rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  /* margin-bottom: 52px; */
 }
 
-.invite__wrap {
+.invite__event-details {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .invite__date {
@@ -217,28 +238,9 @@ export default {
   border-radius: 100vmax;
 }
 
-.invite__image {
+.invite__image--main {
   max-width: 100%;
   height: 320px;
-}
-
-.invite__button {
-  display: block;
-  margin: 0 auto 20px auto;
-  padding: 12px 18px;
-  background-color: #1b5fea;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  display: flex;
-  gap: 6px;
-}
-
-.invite__button--gift {
-  background-color: #1b5fea;
 }
 
 .invite__profile {
@@ -253,7 +255,7 @@ export default {
   margin-bottom: 20px;
 }
 
-.invite__profile-wrap {
+.invite__profile-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,6 +294,9 @@ export default {
 }
 
 .invite__address-text {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
   width: 70%;
   font-size: 1rem;
 }
@@ -303,13 +308,7 @@ export default {
   padding: 40px 0;
 }
 
-.information__container {
-  display: grid;
-  justify-content: center;
-  gap: 100px;
-}
-
-.invite__info-wrapper {
+.invite__info-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -336,6 +335,7 @@ export default {
   transition: transform 0.2s ease;
   position: relative;
 }
+
 .invite__info-card:hover {
   transform: translateY(-8px);
 }
@@ -362,7 +362,7 @@ export default {
   padding: 40px;
 }
 
-.invite__photos-wrapper {
+.invite__photos-content {
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -390,8 +390,14 @@ export default {
 /* @media (min-width: 1024px) {
 } */
 
+@media (min-height: 600px) {
+  .invite__header {
+    /* height: auto; */
+  }
+}
+
 @media (min-width: 640px) {
-  .invite__text {
+  .invite__text--header {
     font-size: 2rem;
   }
 
@@ -399,15 +405,14 @@ export default {
     font-size: 4rem;
   }
 
-  .invite__wrap {
-    display: flex;
+  .invite__event-details {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     gap: 36px;
   }
 
-  .invite__profile-wrap {
+  .invite__profile-content {
     max-width: 650px;
     flex-direction: row;
     gap: 28px;
@@ -417,7 +422,7 @@ export default {
     width: 250px;
   }
 
-  .invite__info-wrapper {
+  .invite__info-content {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -426,7 +431,7 @@ export default {
     width: 230px;
   }
 
-  .invite__photos-wrapper {
+  .invite__photos-content {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
