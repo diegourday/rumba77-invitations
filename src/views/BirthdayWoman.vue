@@ -1,20 +1,15 @@
 <template>
   <div class="invite">
     <img
-      class="invite__lights-img invite__lights-img--left"
-      src="../assets/img/event/birthday_man/lights-left.svg"
-      alt="Luces Izquierda"
-    />
-    <img
-      class="invite__lights-img invite__lights-img--right"
-      src="../assets/img/event/birthday_man/lights-right.svg"
-      alt="Luces Derecha"
+      class="invite__disco-img"
+      src="../assets/img/event/birthday_woman/disco-ball.svg"
+      alt="Bola de Discoteca"
     />
 
     <section class="invite__header">
       <div>
         <p class="invite__text--header">Te invito a mi cumpleaños</p>
-        <h1 class="invite__name">Jhonatan Echaccaya</h1>
+        <h1 class="invite__name">Karem Fernández</h1>
       </div>
       <div class="invite__event-details">
         <div class="invite__delete"></div>
@@ -24,18 +19,18 @@
         </div>
         <img
           class="invite__image--main"
-          src="../assets/img/event/birthday_man/main-img.svg"
+          src="../assets/img/event/birthday_woman/main-img.svg"
           alt="Celebración"
         />
       </div>
     </section>
 
     <section class="invite__profile">
-      <h2 class="invite__subtitle">¡Te invito!</h2>
+      <h2 class="invite__subtitle">¡Estás invitado!</h2>
       <div class="invite__profile-content">
         <img
           class="invite__profile-img"
-          src="../assets/img/event/birthday_man/profile-img.jpg"
+          src="../assets/img/event/birthday_woman/profile-img.jpg"
           alt="Perfil"
         />
         <p class="invite__profile-text">
@@ -47,9 +42,9 @@
 
     <section class="invite__countdown">
       <img
-        class="invite__stopwatch-img"
-        src="../assets/img/event/birthday_man/stopwatch.svg"
-        alt="Cronómetro"
+        class="invite__countdown-img"
+        src="../assets/img/event/birthday_woman/chat.svg"
+        alt="Chat"
       />
       <div class="time-wrapper">
         <span class="time-left">Faltan</span>
@@ -82,7 +77,7 @@
           height="24px"
           viewBox="0 -960 960 960"
           width="24px"
-          fill="#ffffff"
+          fill="#444444"
         >
           <path
             d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"
@@ -93,7 +88,11 @@
     </section>
 
     <section class="invite__countdown">
-      <img class="invite__cup-img" src="../assets/img/event/birthday_man/cup.svg" alt="Copa" />
+      <img
+        class="invite__gifts-img"
+        src="../assets/img/event/birthday_woman/gifts.svg"
+        alt="Regalos"
+      />
     </section>
 
     <section class="invite__info">
@@ -119,27 +118,27 @@
       <div class="invite__photos-content">
         <img
           class="invite__photos-card"
-          src="../assets/img/event/birthday_man/vertical-photo.jpg"
+          src="../assets/img/event/birthday_woman/vertical-photo.jpg"
           alt="Foto 1"
         />
         <img
           class="invite__photos-card"
-          src="../assets/img/event/birthday_man/regular-photo.jpg"
+          src="../assets/img/event/birthday_woman/regular-photo.jpg"
           alt="Foto 2"
         />
         <img
           class="invite__photos-card"
-          src="../assets/img/event/birthday_man/vertical-photo.jpg"
+          src="../assets/img/event/birthday_woman/vertical-photo.jpg"
           alt="Foto 3"
         />
         <img
           class="invite__photos-card"
-          src="../assets/img/event/birthday_man/regular-photo.jpg"
+          src="../assets/img/event/birthday_woman/regular-photo.jpg"
           alt="Foto 4"
         />
         <img
           class="invite__photos-card"
-          src="../assets/img/event/birthday_man/vertical-photo.jpg"
+          src="../assets/img/event/birthday_woman/vertical-photo.jpg"
           alt="Foto 5"
         />
       </div>
@@ -147,7 +146,7 @@
 
     <footer-view
       :logo_color="'#ffffff'"
-      :background="'var(--dark-blue)'"
+      :background="'var(--pink)'"
       :text_color="'var(--white)'"
     ></footer-view>
   </div>
@@ -175,37 +174,33 @@ export default {
 }
 
 .invite {
-  --black: #222222;
+  --black: #444444;
   --white: #ffffff;
-  --background-color: #06273c;
+  --background-color: #fff9e1;
+  --pink: #f0669d;
+  --pink-secondary: #ff4e79;
   --dark-blue: #031927;
   --light-blue: #1b5fea;
   --blue: #0d3072;
   width: 100%;
   margin: 0 auto;
-  color: var(--white);
+  color: var(--black);
   background-color: var(--background-color);
   position: relative;
   overflow-x: hidden;
 }
 
 /* INVITE ABSOLUTE */
-.invite__lights-img {
-  height: 70px;
-}
-
-.invite__lights-img--left {
+.invite__disco-img {
   position: absolute;
-  left: 0;
-}
-
-.invite__lights-img--right {
-  position: absolute;
-  right: 0;
+  height: 80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* INVITE HEADER */
 .invite__header {
+  background: var(--pink);
   text-align: center;
   padding: 100px 20px 0;
   height: 100dvh;
@@ -214,6 +209,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   transition: height 0.5s ease;
+  color: var(--white);
 }
 
 .invite__text--header {
@@ -247,8 +243,8 @@ export default {
 }
 
 .invite__image--main {
-  max-width: 100%;
   height: 360px;
+  margin-right: 80px;
   margin-top: 32px;
 }
 
@@ -278,7 +274,7 @@ export default {
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid rgba(255, 255, 255, 0.5);
+  border: 6px solid var(--pink);
 }
 
 .invite__profile-text {
@@ -294,13 +290,9 @@ export default {
   position: relative;
 }
 
-.invite__stopwatch-img {
-  height: 430px;
-}
-
 .time-wrapper {
   position: absolute;
-  top: 47%;
+  top: 30%;
   left: 50.3%;
   transform: translate(-50%, 0%);
   display: grid;
@@ -310,7 +302,7 @@ export default {
 .time-left {
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--blue);
+  color: var(--pink-secondary);
   text-align: center;
 }
 
@@ -332,7 +324,7 @@ export default {
 .time-number {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--blue);
+  color: var(--pink-secondary);
   text-align: center;
   line-height: 1;
 }
@@ -365,8 +357,8 @@ export default {
   font-size: 1rem;
 }
 
-.invite__cup-img {
-  height: 122px;
+.invite__gifts-img {
+  height: 160px;
 }
 
 /* INVITE INFO */
@@ -389,7 +381,7 @@ export default {
   padding: 36px 30px;
   text-align: center;
   width: 280px;
-  background-color: var(--light-blue);
+  background-color: var(--pink);
   border-bottom: 5px solid var(--white);
   box-shadow: var(--shadow);
   border-radius: 20px;
@@ -441,7 +433,7 @@ export default {
 .invite__photos-card {
   width: 100%;
   object-fit: cover;
-  border: 6px solid var(--white);
+  border: 6px solid var(--pink);
   border-radius: 16px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -453,6 +445,10 @@ export default {
 
 @media (min-width: 520px) {
   /* INVITE HEADER */
+  .invite__header {
+    padding-top: 150px;
+  }
+
   .invite__text--header {
     font-size: 1.5rem;
   }
@@ -470,14 +466,14 @@ export default {
   }
 
   .invite__image--main {
-    height: 400px;
+    margin-right: 0;
   }
 }
 
 @media (min-width: 640px) {
   /* INVITE ABSOLUTE */
-  .invite__lights-img {
-    height: 80px;
+  .invite__disco-img {
+    height: 112px;
   }
 
   /* INVITE PROFILE */

@@ -81,7 +81,9 @@ export default {
     max-width: 100%;
     text-align: justify;
   }
+}
 
+@media (min-width: 640px) {
   .policy-details {
     flex-direction: column;
   }
