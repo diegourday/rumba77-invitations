@@ -7,14 +7,14 @@
     />
 
     <section class="invite__header">
-      <div>
-        <p class="invite__text--header">Te invito a mi cumpleaños</p>
+      <div class="invite__text-wrap">
+        <p class="invite__text-header">Te invito a mi cumpleaños</p>
         <h1 class="invite__name">Karem Fernández</h1>
       </div>
       <div class="invite__event-details">
         <div class="invite__delete"></div>
         <div class="invite__event-details-wrap">
-          <p class="invite__text--celebrar">Se celebrará</p>
+          <p class="invite__text-celebrar">Se celebrará</p>
           <p class="invite__date">Martes 04 de Marzo | 5:30 pm</p>
         </div>
         <img
@@ -202,9 +202,9 @@ export default {
 .invite__header {
   background: var(--pink);
   text-align: center;
-  padding: 100px 20px 0;
-  height: 100dvh;
-  min-height: 720px;
+  padding: 80px 20px 0;
+  height: 100svh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -212,7 +212,13 @@ export default {
   color: var(--white);
 }
 
-.invite__text--header {
+.invite__text-wrap {
+  display: grid;
+  align-content: center;
+  height: 100%;
+}
+
+.invite__text-header {
   font-size: 1.25rem;
 }
 
@@ -229,7 +235,7 @@ export default {
   height: 100%;
 }
 
-.invite__text--celebrar {
+.invite__text-celebrar {
   font-size: 1.25rem;
   margin-bottom: 8px;
 }
@@ -245,7 +251,7 @@ export default {
 .invite__image--main {
   height: 360px;
   margin-right: 80px;
-  margin-top: 32px;
+  margin-top: 64px;
 }
 
 /* INVITE PROFILE */
@@ -449,7 +455,7 @@ export default {
     padding-top: 150px;
   }
 
-  .invite__text--header {
+  .invite__text-header {
     font-size: 1.5rem;
   }
 
@@ -457,7 +463,7 @@ export default {
     font-size: 2.5rem;
   }
 
-  .invite__text--celebrar {
+  .invite__text-celebrar {
     font-size: 1.5rem;
   }
 
@@ -467,6 +473,7 @@ export default {
 
   .invite__image--main {
     margin-right: 0;
+    margin-top: 0;
   }
 }
 
@@ -514,7 +521,11 @@ export default {
 /* horizontal de la mayoría de teléfondos */
 @media (min-width: 900px) {
   /* INVITE HEADER */
-  .invite__text--header {
+  .invite__header {
+    padding: 110px 20px 0;
+  }
+
+  .invite__text-header {
     font-size: 2rem;
   }
 
@@ -538,7 +549,7 @@ export default {
     margin-bottom: 80px;
   }
 
-  .invite__text--celebrar {
+  .invite__text-celebrar {
     font-size: 2rem;
   }
 
