@@ -78,6 +78,7 @@
       <p class="invite__address-title">Dirección</p>
       <div class="invite__address-text">
         <svg
+          class="address-icon"
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 -960 960 960"
@@ -367,8 +368,12 @@ export default {
   display: flex;
   justify-content: center;
   gap: 4px;
-  width: 70%;
+  width: 87%;
   font-size: 1rem;
+}
+
+.address-icon {
+  flex-shrink: 0;
 }
 
 .invite__cup-img {
@@ -476,12 +481,17 @@ export default {
   }
 
   .invite__image--main {
-    margin-top: 0;
-    height: 400px;
+    margin-top: 32px;
+    height: 100%;
   }
 }
 
 @media (min-width: 640px) {
+  /* INVITE HEADER */
+  .invite__header {
+    min-height: 640px;
+  }
+
   /* INVITE ABSOLUTE */
   .invite__lights-img {
     height: 80px;
@@ -523,7 +533,7 @@ export default {
 }
 
 /* horizontal de la mayoría de teléfondos */
-@media (min-width: 900px) {
+@media (min-width: 920px) {
   /* INVITE HEADER */
   .invite__header {
     padding: 20px 20px 0;
@@ -560,11 +570,15 @@ export default {
   .invite__date {
     font-size: 1.5rem;
   }
+
+  .invite__image--main {
+    height: 400px;
+  }
 }
 
 /* hace que la máxima altura que
 se pueda aplicar 100dvh sea 800px */
-@media (min-height: 800px) {
+@media (min-height: 1024px) {
   .invite__header {
     height: auto;
   }
