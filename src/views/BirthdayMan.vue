@@ -193,6 +193,7 @@ export default {
 /* INVITE ABSOLUTE */
 .invite__lights-img {
   height: 70px;
+  animation: fadeInDown 0.6s ease-out;
 }
 
 .invite__lights-img--left {
@@ -225,11 +226,14 @@ export default {
 
 .invite__text-header {
   font-size: 1.25rem;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .invite__name {
   font-size: 1.75rem;
   font-weight: 600;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards 0.2s;
 }
 
 .invite__event-details {
@@ -243,6 +247,8 @@ export default {
 .invite__text-celebrar {
   font-size: 1.25rem;
   margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards 0.4s;
 }
 
 .invite__date {
@@ -251,12 +257,16 @@ export default {
   color: var(--black);
   padding: 2px 12px;
   border-radius: 100vmax;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards 0.6s;
 }
 
 .invite__image--main {
   max-width: 100%;
   height: 360px;
   margin-top: 64px;
+  opacity: 0;
+  animation: scaleIn 0.6s ease-out forwards 0.4s;
 }
 
 /* INVITE PROFILE */
@@ -460,6 +470,39 @@ export default {
 
 .invite__photos-card:hover {
   transform: translateY(-8px);
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 @media (min-width: 412px) {
