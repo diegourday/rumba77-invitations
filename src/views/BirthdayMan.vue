@@ -462,14 +462,14 @@ export default {
   transform: translateY(-8px);
 }
 
-@media (min-width: 520px) {
+@media (min-width: 412px) {
   /* INVITE HEADER */
   .invite__text-header {
     font-size: 1.5rem;
   }
 
   .invite__name {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
   }
 
   .invite__text-celebrar {
@@ -478,6 +478,18 @@ export default {
 
   .invite__date {
     font-size: 1.35rem;
+  }
+
+  .invite__image--main {
+    height: 380px;
+    margin-top: 90px;
+  }
+}
+
+@media (min-width: 520px) {
+  /* INVITE HEADER */
+  .invite__name {
+    font-size: 2.5rem;
   }
 
   .invite__image--main {
