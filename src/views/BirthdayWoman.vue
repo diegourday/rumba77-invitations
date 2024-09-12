@@ -270,7 +270,7 @@ export default {
   display: grid;
   justify-items: center;
   gap: 50px;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .invite__subtitle {

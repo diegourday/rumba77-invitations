@@ -9,6 +9,7 @@ import { RouterLink } from 'vue-router'
     <div class="home-view__links">
       <RouterLink to="/cumpleanos-hombre" class="home-view__link">Cumpleaños Hombre</RouterLink>
       <RouterLink to="/cumpleanos-mujer" class="home-view__link">Cumpleaños Mujer</RouterLink>
+      <RouterLink to="/evento-religioso" class="home-view__link">Evento Religioso</RouterLink>
     </div>
   </div>
 </template>
