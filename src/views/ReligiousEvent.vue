@@ -4,12 +4,14 @@
 
     <section class="invite__header">
       <div class="invite__text-wrap">
-        <h1 class="invite__text-header">Septiembre Crucificado</h1>
+        <!-- <h1 class="invite__text-header">Septiembre Crucificado</h1> -->
+        <h1 class="invite__text-header">FESTIVIDAD DEL SEÑOR CRUCIFICADO DE CHINCHA BAJA</h1>
       </div>
       <div class="invite__event-details">
         <div class="invite__delete"></div>
         <div class="invite__event-details-wrap">
-          <p class="invite__date">Los invitamos a este gran evento</p>
+          <!-- <p class="invite__date">Los invitamos a este gran evento</p> -->
+          <p class="invite__date">Celebra con nosotros la Exaltación de la Cruz</p>
         </div>
         <img
           class="invite__image--main"
@@ -251,9 +253,8 @@ export default {
 
 * {
   margin: 0;
-  padding: 0;
+  /* padding: 0; */
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 .invite {
@@ -269,6 +270,7 @@ export default {
   background-color: var(--background-color);
   position: relative;
   overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* INVITE ABSOLUTE */
@@ -284,7 +286,7 @@ export default {
 /* INVITE HEADER */
 .invite__header {
   text-align: center;
-  padding: 70px 20px 0;
+  padding: 100px 20px 0;
   height: 100svh;
   min-height: 600px;
   display: flex;
@@ -342,7 +344,7 @@ export default {
 .invite__image--main {
   max-width: 100%;
   height: 360px;
-  margin-top: 64px;
+  margin-top: 16px;
   opacity: 0;
   animation: scaleIn 0.6s ease-out forwards 0.4s;
 }
