@@ -299,7 +299,6 @@ export default {
 .invite__text-wrap {
   display: grid;
   align-content: center;
-  height: 100%;
 }
 
 .invite__text-header {
@@ -715,6 +714,10 @@ export default {
     min-height: 745px;
   }
 
+  .invite__text-wrap {
+    height: 100%;
+  }
+
   .invite__text-header {
     font-size: 3.9rem;
   }
@@ -749,7 +752,6 @@ se pueda aplicar 100dvh sea 800px */
 @media (min-height: 1024px) {
   .invite__header {
     height: auto;
-    /* OJITO ACA >>> */
     padding-top: 140px;
     min-height: 600px;
   }
