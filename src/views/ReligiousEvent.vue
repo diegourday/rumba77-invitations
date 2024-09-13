@@ -288,7 +288,7 @@ export default {
   text-align: center;
   padding: 100px 20px 0;
   height: 100svh;
-  min-height: 600px;
+  min-height: 657px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -658,7 +658,6 @@ export default {
   /* INVITE HEADER */
   .invite__header {
     padding-top: 140px;
-    min-height: 745px;
   }
 
   /* INVITE ABSOLUTE */
@@ -707,17 +706,12 @@ export default {
   }
 }
 
-@media (min-width: 800px) {
-  .invite__header {
-    /* min-height: 600px; */
-  }
-}
-
 /* horizontal de la mayoría de teléfondos */
 @media (min-width: 920px) {
   /* INVITE HEADER */
   .invite__header {
     padding: 126px 20px 0;
+    min-height: 745px;
   }
 
   .invite__text-header {
