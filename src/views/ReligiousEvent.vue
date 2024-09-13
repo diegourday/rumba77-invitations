@@ -5,7 +5,8 @@
     <section class="invite__header">
       <div class="invite__text-wrap">
         <!-- <h1 class="invite__text-header">Septiembre Crucificado</h1> -->
-        <h1 class="invite__text-header">FESTIVIDAD DEL SEÑOR CRUCIFICADO DE CHINCHA BAJA</h1>
+        <!-- <h1 class="invite__text-header">FESTIVIDAD DEL SEÑOR CRUCIFICADO DE CHINCHA BAJA</h1> -->
+        <h1 class="invite__text-header">Festividad del Señor Crucificado</h1>
       </div>
       <div class="invite__event-details">
         <div class="invite__delete"></div>
