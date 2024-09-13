@@ -707,6 +707,12 @@ export default {
   }
 }
 
+@media (min-width: 800px) {
+  .invite__header {
+    /* min-height: 600px; */
+  }
+}
+
 /* horizontal de la mayoría de teléfondos */
 @media (min-width: 920px) {
   /* INVITE HEADER */
@@ -749,7 +755,8 @@ se pueda aplicar 100dvh sea 800px */
   .invite__header {
     height: auto;
     /* OJITO ACA >>> */
-    padding-top: 126px;
+    padding-top: 140px;
+    min-height: 600px;
   }
 }
 
