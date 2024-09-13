@@ -638,7 +638,7 @@ export default {
 
   .invite__image--main {
     height: 380px;
-    margin-top: 90px;
+    /* margin-top: 90px; */
   }
 }
 
@@ -657,6 +657,7 @@ export default {
 @media (min-width: 640px) {
   /* INVITE HEADER */
   .invite__header {
+    padding-top: 140px;
     min-height: 640px;
   }
 
@@ -714,7 +715,7 @@ export default {
   }
 
   .invite__text-header {
-    font-size: 4rem;
+    font-size: 3.9rem;
   }
 
   .invite__event-details {
