@@ -658,7 +658,7 @@ export default {
   /* INVITE HEADER */
   .invite__header {
     padding-top: 140px;
-    min-height: 640px;
+    min-height: 745px;
   }
 
   /* INVITE ABSOLUTE */
