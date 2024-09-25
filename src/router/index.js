@@ -1,33 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import BirthdayMan from '@/views/BirthdayMan.vue'
-import BirthdayWoman from '@/views/BirthdayWoman.vue'
-import ReligiousEvent from '@/views/ReligiousEvent.vue'
+import MainEvent from '@/views/PublicPage.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/cumpleanos-hombre',
-      name: 'cumpleanos-hombre',
-      component: BirthdayMan
-    },
-    {
-      path: '/cumpleanos-mujer',
-      name: 'cumpleanos-mujer',
-      component: BirthdayWoman
-    },
-    {
-      path: '/evento-religioso',
-      name: 'evento-religioso',
-      component: ReligiousEvent
-    }
-  ]
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: [
+        {
+            path: '/',
+            redirect: '/evento/evento'
+        },
+        {
+            path: '/evento/:name?',
+            name: 'EventPublic',
+            component: MainEvent,
+            props: (route) => ({ name: route.params.name || 'default' })
+        },
+        {
+            path: '/evento/:name?/modal',
+            name: 'EventModal',
+            component: MainEvent,
+            props: (route) => ({ name: route.params.name || 'default', modal: true })
+        }
+    ]
 })
 
 export default router
