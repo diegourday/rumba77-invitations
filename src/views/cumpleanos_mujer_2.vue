@@ -1,10 +1,10 @@
 <template>
     <div class="invite" v-if="event">
-        <lottie
+        <img
             class="invite__disco-img"
-            src="/img/event/cumpleanos_mujer_2/disco-ball.json"
+            src="/img/event/cumpleanos_mujer_2/disco-ball.svg"
             alt="Bola de Discoteca"
-        ></lottie>
+        />
 
         <section class="invite__header">
             <div class="invite__text-wrap">
@@ -97,11 +97,11 @@
         </section>
 
         <section class="invite__countdown">
-            <lottie
+            <img
                 class="invite__gifts-img"
-                src="/img/event/cumpleanos_mujer_2/gifts.json"
+                src="/img/event/cumpleanos_mujer_2/gifts.svg"
                 alt="Regalos"
-            ></lottie>
+            />
         </section>
 
         <section class="invite__info" v-if="event.info.length > 0">

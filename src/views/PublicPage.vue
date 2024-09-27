@@ -1,13 +1,13 @@
 <template>
     <div>
-        <cumpleanos-mujer
+        <evento-navideno
             v-if="currentComponent"
             :is="currentComponent"
             :event="event"
             :modalactive="modalactive"
             @actionmodal="actionmodal"
             @loaded="handleChildLoaded"
-        ></cumpleanos-mujer>
+        ></evento-navideno>
     </div>
 </template>
 
@@ -15,13 +15,15 @@
 import CumpleanosMujer from '@/views/cumpleanos_mujer_2.vue'
 import CumpleanosHombre from '@/views/cumpleanos_hombre_2.vue'
 import EventoReligioso from '@/views/evento_religioso_1.vue'
+import EventoNavideno from '@/views/evento_navideno_2.vue'
 import _ from 'lodash'
-import eventData from '@/utils/event.json'
+import eventData from '@/utils/evento_navideno.json'
 export default {
     components: {
         'cumpleanos-mujer': CumpleanosMujer,
         'cumpleanos-hombre': CumpleanosHombre,
-        'evento-religioso': EventoReligioso
+        'evento-religioso': EventoReligioso,
+        'evento-navideno': EventoNavideno
     },
     data() {
         return {

@@ -1,19 +1,13 @@
 <template>
-    <div class="invite" v-if="event">
+    <div class="invite" v-if="event">        
         <img
-            class="invite__lights-img invite__lights-img--left"
-            src="/img/event/cumpleanos_hombre_2/lights-left.svg"
-            alt="Luces Izquierda"
-        />
-        <img
-            class="invite__lights-img invite__lights-img--right"
-            src="/img/event/cumpleanos_hombre_2/lights-right.svg"
-            alt="Luces Derecha"
+            class="invite__lights-img"
+            src="/img/event/evento_navideno_2/lights.svg"
+            alt="Luces de Navidad"
         />
 
         <section class="invite__header">
-            <div class="invite__text-wrap">
-                <p class="invite__text-header">{{ event.title }}</p>
+            <div class="invite__text-wrap">                
                 <h1 class="invite__name">{{ event.name }}</h1>
             </div>
             <div class="invite__event-details">
@@ -31,7 +25,7 @@
                 </div>
                 <img
                     class="invite__image--main"
-                    src="/img/event/cumpleanos_hombre_2/main-img.svg"
+                    src="/img/event/evento_navideno_2/main-img.svg"
                     alt="Celebración"
                 ></img>
             </div>
@@ -53,8 +47,8 @@
         <section class="invite__countdown">
             <img
                 class="invite__stopwatch-img"
-                src="/img/event/cumpleanos_hombre_2/stopwatch.svg"
-                alt="Cronómetro"
+                src="/img/event/evento_navideno_2/crown.svg"
+                alt="Corona de Adviento"
             ></img>
             <div class="time-wrapper" v-if="!pastevent && !pastoday">
                 <span
@@ -85,7 +79,7 @@
                 <span class="celebration__info time-left">Evento realizado</span>
             </div>
             <div class="time-wrapper-none" v-else-if="pastoday">
-                <span class="celebration__info time-left">Es hoy!</span>
+                <span class="celebration__info time-left">¡Es hoy!</span>
             </div>
         </section>
 
@@ -102,7 +96,7 @@
         </section>
 
         <section class="invite__countdown">
-            <img class="invite__cup-img" src="/img/event/cumpleanos_hombre_2/cup.svg" alt="Copa" />
+            <img class="invite__cup-img" src="/img/event/evento_navideno_2/reindeer.svg" alt="Copa" />
         </section>
 
         <section class="invite__info" v-if="event.info.length > 0">
@@ -143,7 +137,7 @@
         </section>
         <footer-for-template
             :logo_color="'#ffffff'"
-            :background="'var(--dark-blue)'"
+            :background="'var(--light-blue)'"
             :text_color="'var(--white)'"
         ></footer-for-template>
         <div class="modal-shadow blur" v-show="modalactive">
@@ -215,7 +209,7 @@ export default {
                 name: null,
                 size: 'lg'
             },
-            filterColor: 'var(--light-blue)'
+            filterColor: 'var(--red)'
         }
     },
     props: ['event', 'modalactive'],
@@ -429,10 +423,9 @@ export default {
 .invite {
     --black: #222222;
     --white: #ffffff;
-    --background-color: #06273c;
-    --dark-blue: #031927;
-    --light-blue: #1b5fea;
-    --blue: #0d3072;
+    --background-color: #082D44;
+    --light-blue: #003F66;    
+    --red: #CE1B1B;
     width: 100%;
     margin: 0 auto;
     color: var(--white);
@@ -444,24 +437,17 @@ export default {
 
 /* INVITE ABSOLUTE */
 .invite__lights-img {
-    height: 70px;
-    animation: fadeInDown 0.6s ease-out;
-}
-
-.invite__lights-img--left {
+    height: 65px;
+    animation: fadeIn 0.6s ease-out;
     position: absolute;
-    left: 0;
-}
-
-.invite__lights-img--right {
-    position: absolute;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* INVITE HEADER */
 .invite__header {
     text-align: center;
-    padding: 70px 20px 0;
+    padding: 65px 20px 0;
     height: 100svh;
     min-height: 600px;
     display: flex;
@@ -514,8 +500,7 @@ export default {
 }
 
 .invite__image--main {
-    max-width: 100%;
-    height: 360px;
+    max-width: 100%;    
     margin-top: 64px;
     opacity: 0;
     animation: scaleIn 0.6s ease-out forwards 0.4s;
@@ -564,29 +549,29 @@ export default {
 }
 
 .invite__stopwatch-img {
-    height: 430px;
+    height: 374px;
 }
 
 .time-wrapper {
     position: absolute;
-    top: 47%;
-    left: 50.3%;
-    transform: translate(-50%, 0%);
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: grid;
     gap: 10px;
 }
 .time-wrapper-none {
     text-wrap: nowrap;
     position: absolute;
-    top: 60%;
-    left: 51%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .time-left {
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--blue);
+    color: var(--white);
     text-align: center;
 }
 
@@ -608,14 +593,14 @@ export default {
 .time-number {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--blue);
+    color: var(--white);
     text-align: center;
     line-height: 1;
 }
 
 .time-label {
     font-size: 1.25rem;
-    color: var(--black);
+    color: var(--white);
     line-height: 1;
 }
 
@@ -649,7 +634,7 @@ export default {
 }
 
 .invite__cup-img {
-    height: 122px;
+    height: 170px;
 }
 
 /* INVITE INFO */
@@ -672,7 +657,7 @@ export default {
     padding: 36px 30px;
     text-align: center;
     width: 280px;
-    background-color: var(--light-blue);
+    background-color: var(--red);
     border-bottom: 5px solid var(--white);
     box-shadow: var(--shadow);
     border-radius: 20px;
@@ -735,14 +720,12 @@ export default {
     transform: translateY(-8px);
 }
 
-@keyframes fadeInDown {
+@keyframes fadeIn {
     0% {
-        opacity: 0;
-        transform: translateY(-20px);
+        opacity: 0;        
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1;        
     }
 }
 
@@ -776,7 +759,7 @@ export default {
     border-radius: 32px;
 }
 .btn-close-modal {
-    background: var(--blue);
+    background: var(--red);
 }
 .btn-close-modal:hover {
     background: #1c50b9;
@@ -785,26 +768,15 @@ export default {
     background-color: rgba(0, 0, 0, 0.65);
 }
 .modal-icon-float {
-    background: var(--blue);
+    background: var(--red);
     box-sizing: content-box;
 }
 @media (min-width: 412px) {
-    /* INVITE HEADER */
-    .invite__text-header {
-        font-size: 1.15rem;
-    }
+    /* INVITE HEADER */    
 
     .invite__name {
         font-size: 2.1rem;
-    }
-
-    .invite__text-celebrar {
-        font-size: 1.15rem;
-    }
-
-    .invite__date {
-        font-size: 1.15rem;
-    }
+    }    
 
     .invite__image--main {
         height: 380px;
@@ -827,7 +799,8 @@ export default {
 @media (min-width: 640px) {
     /* INVITE HEADER */
     .invite__header {
-        min-height: 640px;
+        min-height: 700px;
+        padding: 100px 20px 0;
     }
 
     /* INVITE ABSOLUTE */
@@ -874,7 +847,7 @@ export default {
 @media (min-width: 920px) {
     /* INVITE HEADER */
     .invite__header {
-        padding: 20px 20px 0;
+        padding: 100px 20px 0;
     }
 
     .invite__text-header {
@@ -882,7 +855,7 @@ export default {
     }
 
     .invite__name {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .invite__event-details {
