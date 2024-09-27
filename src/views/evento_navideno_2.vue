@@ -851,6 +851,7 @@ export default {
     /* INVITE HEADER */
     .invite__header {
         min-height: auto;
+        height: 100svh;
         padding: 100px 20px 0;
     }
 
