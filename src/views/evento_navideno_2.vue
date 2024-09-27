@@ -424,7 +424,8 @@ export default {
     --black: #222222;
     --white: #ffffff;
     --background-color: #082D44;
-    --light-blue: #003F66;    
+    --light-blue: #003F66;
+    --dark-red: #a40000;
     --red: #CE1B1B;
     width: 100%;
     margin: 0 auto;
@@ -760,9 +761,10 @@ export default {
 }
 .btn-close-modal {
     background: var(--red);
+    transition: background-color 0.1s ease;
 }
 .btn-close-modal:hover {
-    background: #1c50b9;
+    background: var(--dark-red);
 }
 .modal-shadow {
     background-color: rgba(0, 0, 0, 0.65);
