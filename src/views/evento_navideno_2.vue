@@ -802,6 +802,7 @@ export default {
     /* INVITE HEADER */
     .invite__header {
         min-height: 700px;
+        height: auto;
         padding: 100px 20px 0;
     }
 
