@@ -847,6 +847,7 @@ export default {
 @media (min-width: 920px) {
     /* INVITE HEADER */
     .invite__header {
+        min-height: auto;
         padding: 100px 20px 0;
     }
 
@@ -883,7 +884,7 @@ export default {
     }
 
     .invite__image--main {
-        height: 400px;
+        height: 340px;
     }
 }
 
