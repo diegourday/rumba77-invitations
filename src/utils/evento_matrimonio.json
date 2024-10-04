@@ -1,0 +1,378 @@
+{
+    "event": {
+        "id": 1,
+        "user_id": 3,
+        "event_type_id": 3,
+        "event_cover_id": 1,
+        "event_template_id": 3,
+        "profile_photo": "1_1722992471.jpg",
+        "name": "Jhonatan & Karem",
+        "gender": 0,
+        "title": "Matrimonio",
+        "subtitle": "Se celebrará",
+        "description": "Hola, ya llega el gran día y esperamos que nos puedan acompañar en este día tan lindo. Aquí podrán encontrar toda la información del evento.",
+        "address": "Lima, Cañete, San Luis - CPM Santa Barbara",
+        "reference": null,
+        "phone": null,
+        "whatsapp": null,
+        "date": "2024-12-10",
+        "time": "18:00:00",
+        "url": "https://rumba77.com/eventos/revelacion-del-sexo-del-bebe-de-jhonatan-karem-20240831110",
+        "url_edit": "revelacion-del-sexo-del-bebe-de-jhonatan-karem-20240831110",
+        "visibility": 1,
+        "status": 1,
+        "status_detail": null,
+        "created_at": "2024-07-15T01:56:03.000000Z",
+        "updated_at": "2024-09-05T02:53:31.000000Z",
+        "type_gender_id": 3,
+        "dateforhumans": "Sábado 31 de Agosto del 2024",
+        "dateforhumans2": "Martes 10 de Diciembre | 6:00 pm",
+        "dateforhumans3": "Sábado 31 de Agosto del 2024",
+        "timeforhumans": "06:00 PM",
+        "profileaws": "https://img.freepik.com/free-photo/portrait-modern-couple-home_23-2148115830.jpg?t=st=1728000940~exp=1728004540~hmac=ab49f35a21a5449dca394ec1fc867475a44ea9ebf0a90675dcc08bc232abd771&w=740",
+        "parents": true,
+        "godparents": false,
+        "customSectionsData": {
+            "padres": "Padres",
+            "fotos": "Fotos",
+            "informacion": "Más información",
+            "presentacion": "Te invitamos",
+            "padrinos": "Padrinos"
+        },
+        "typegender": {
+            "id": 3,
+            "event_type_id": 3,
+            "gender": 0,
+            "color": "#628DDB",
+            "background": "#D8DBF8",
+            "illustration": "revelacion-sexo.svg",
+            "created_at": null,
+            "updated_at": null,
+            "name": "Karem & Jhonatan",
+            "label_name": "Nombre de los padres",
+            "gender_label": null
+        },
+        "type": {
+            "id": 3,
+            "name": "Revelación del sexo del bebé",
+            "status": 1,
+            "gender": 3,
+            "order": 3,
+            "created_at": null,
+            "updated_at": null,
+            "label": "Revelación del sexo del bebé",
+            "parents": true,
+            "godparents": true,
+            "templates": {
+                "1": {
+                    "id": 4,
+                    "name": "Revelacion_sexo_2",
+                    "status": 1,
+                    "filename": "revelacion-sexo-2.jpg",
+                    "created_at": null,
+                    "updated_at": null,
+                    "gender": 3,
+                    "title": "¡Te invitamos a descubrirlo! 🥳",
+                    "subtitle": "Se celebrará",
+                    "description": "Únete a nosotros para descubrir el género de nuestro bebé y ser parte de este momento mágico. 🎉💙💖 ¡Estamos ansiosos por compartir esta sorpresa especial contigo!",
+                    "edit_title": true,
+                    "edit_subtitle": true,
+                    "default": true,
+                    "trade_name": "Nubes con globos",
+                    "pivot": {
+                        "event_type_id": 3,
+                        "event_template_id": 4
+                    }
+                },
+                "2": {
+                    "id": 3,
+                    "name": "Revelacion_sexo_1",
+                    "status": 1,
+                    "filename": "revelacion-sexo.jpg",
+                    "created_at": null,
+                    "updated_at": null,
+                    "gender": 3,
+                    "title": "¡Te invitamos a descubrirlo!",
+                    "subtitle": "Se celebrará",
+                    "description": "Nos emociona compartir este momento tan especial con ustedes. Únete a nosotros para descubrir juntos si nuestro bebé será un niño o una niña. ¡Será una noche llena de sorpresas, alegría y mucha diversión!\n🫣🤩🎉",
+                    "edit_title": true,
+                    "edit_subtitle": true,
+                    "default": false,
+                    "trade_name": "Elefantes con globos",
+                    "pivot": {
+                        "event_type_id": 3,
+                        "event_template_id": 3
+                    }
+                }
+            },
+            "covers": []
+        },
+        "family": [
+            {
+                "id": 1,
+                "event_id": 1,
+                "family_type_id": 2,
+                "name": "Karem Fernandez",
+                "gender": 0,
+                "created_at": null,
+                "updated_at": null,
+                "type": {
+                    "id": 2,
+                    "name": "Mamá",
+                    "created_at": null,
+                    "updated_at": null
+                }
+            },
+            {
+                "id": 2,
+                "event_id": 1,
+                "family_type_id": 1,
+                "name": "Jhonatan Echaccaya",
+                "gender": 1,
+                "created_at": null,
+                "updated_at": null,
+                "type": {
+                    "id": 1,
+                    "name": "Papá",
+                    "created_at": null,
+                    "updated_at": null
+                }
+            }
+        ],
+        "info": [
+            {
+                "id": 1,
+                "event_id": 1,
+                "title": "Cena",
+                "detail": "Se repartirá la cena aproximadamente 8:00 pm, después de la revelación, paciencia 😛🍽",
+                "created_at": null,
+                "updated_at": "2024-08-10T23:53:49.000000Z",
+                "icon_id": 80,
+                "order": 1,
+                "icon": {
+                    "id": 80,
+                    "file": "dinner_11923147.svg",
+                    "status": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "order": 19
+                }
+            },
+            {
+                "id": 2,
+                "event_id": 1,
+                "title": "Barra Libre",
+                "detail": "🍸 Trago gratis en la barra\n🍺 Se permite traer cerveza u otra bebida, acceso libre\n\n☠️🥳👻☠️🥳👻☠️🥳👻☠️🥳👻",
+                "created_at": null,
+                "updated_at": "2024-08-06T00:15:04.000000Z",
+                "icon_id": 1,
+                "order": 2,
+                "icon": {
+                    "id": 1,
+                    "file": "alcohol.svg",
+                    "status": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "order": 14
+                }
+            },
+            {
+                "id": 3,
+                "event_id": 1,
+                "title": "Fiesta",
+                "detail": "Después de la Revelación empieza la juerga con Fernando Deejay  🕺💃",
+                "created_at": null,
+                "updated_at": "2024-08-11T02:16:17.000000Z",
+                "icon_id": 5,
+                "order": 3,
+                "icon": {
+                    "id": 5,
+                    "file": "dance.svg",
+                    "status": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "order": 42
+                }
+            },
+            {
+                "id": 4,
+                "event_id": 1,
+                "title": "Dirección",
+                "detail": "Lima, Cañete, San Luis",
+                "created_at": null,
+                "updated_at": "2024-09-05T02:51:17.000000Z",
+                "icon_id": 14,
+                "order": 4,
+                "icon": {
+                    "id": 14,
+                    "file": "casa-icono.svg",
+                    "status": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "order": 32
+                }
+            }
+        ],
+        "cover": {
+            "id": 1,
+            "name": "cumpleaños-1",
+            "status": 1,
+            "filename": "cumpleaños-1.png",
+            "gender": 2,
+            "created_at": null,
+            "updated_at": null
+        },
+        "template": {
+            "id": 3,
+            "name": "Revelacion_sexo_1",
+            "status": 1,
+            "filename": "revelacion-sexo.jpg",
+            "created_at": null,
+            "updated_at": null,
+            "gender": 3,
+            "title": "¡Te invitamos a descubrirlo!",
+            "subtitle": "Se celebrará",
+            "description": "Nos emociona compartir este momento tan especial con ustedes. Únete a nosotros para descubrir juntos si nuestro bebé será un niño o una niña. ¡Será una noche llena de sorpresas, alegría y mucha diversión!\n🫣🤩🎉",
+            "edit_title": true,
+            "edit_subtitle": true,
+            "default": false,
+            "trade_name": "Elefantes con globos"
+        },
+        "files": [
+            {
+                "id": 24,
+                "event_id": 1,
+                "filename": "10_1723208837.jpg",
+                "created_at": "2024-08-09T13:07:17.000000Z",
+                "updated_at": "2024-09-08T16:54:23.000000Z",
+                "order": 1,
+                "url": "https://img.freepik.com/free-photo/romantic-wedding-couple-love-walks-mountains-forest_1328-4854.jpg?t=st=1728000317~exp=1728003917~hmac=dea4b45c72927ff3e9ab3c1b64ca96d710b072f965499792e8dd7ba404acc7d7&w=900"
+            },
+            {
+                "id": 75,
+                "event_id": 1,
+                "filename": "10_1725814463.jpg",
+                "created_at": "2024-09-08T16:54:24.000000Z",
+                "updated_at": "2024-09-08T16:54:24.000000Z",
+                "order": 2,
+                "url": "https://img.freepik.com/free-photo/people-celebrating-wedding-beach_23-2149043927.jpg?t=st=1728000683~exp=1728004283~hmac=0c7c925607434aaf64c1e766ffc3dfc53750179127464e24d2b3cc8510ca1181&w=740"
+            },
+            {
+                "id": 76,
+                "event_id": 1,
+                "filename": "11_1725814464.jpg",
+                "created_at": "2024-09-08T16:54:24.000000Z",
+                "updated_at": "2024-09-08T16:54:24.000000Z",
+                "order": 3,
+                "url": "https://img.freepik.com/free-photo/bride-groom-having-their-wedding-with-guests-beach_23-2149043982.jpg?t=st=1728000648~exp=1728004248~hmac=e213037e7914bdfcf8b4b3bdb1b49f48b7757edc8f6e85d7ce8e8c39db4322ef&w=900"
+            }
+        ],
+        "customsections": [
+            {
+                "id": 1,
+                "event_type_id": 3,
+                "event_section_id": 4,
+                "custom_name": null,
+                "status": 1,
+                "created_at": null,
+                "updated_at": null,
+                "pivot": {
+                    "event_id": 1,
+                    "event_type_section_id": 1,
+                    "name": "Padres"
+                },
+                "section": {
+                    "id": 4,
+                    "name": "padres",
+                    "default_title": "Padres",
+                    "created_at": null,
+                    "updated_at": null
+                }
+            },
+            {
+                "id": 2,
+                "event_type_id": 3,
+                "event_section_id": 3,
+                "custom_name": null,
+                "status": 1,
+                "created_at": null,
+                "updated_at": null,
+                "pivot": {
+                    "event_id": 1,
+                    "event_type_section_id": 2,
+                    "name": "Nuestra historia"
+                },
+                "section": {
+                    "id": 3,
+                    "name": "fotos",
+                    "default_title": "Nuestra historia",
+                    "created_at": null,
+                    "updated_at": null
+                }
+            },
+            {
+                "id": 3,
+                "event_type_id": 3,
+                "event_section_id": 2,
+                "custom_name": null,
+                "status": 1,
+                "created_at": null,
+                "updated_at": null,
+                "pivot": {
+                    "event_id": 1,
+                    "event_type_section_id": 3,
+                    "name": "Más información"
+                },
+                "section": {
+                    "id": 2,
+                    "name": "informacion",
+                    "default_title": "Más información",
+                    "created_at": null,
+                    "updated_at": null
+                }
+            },
+            {
+                "id": 4,
+                "event_type_id": 3,
+                "event_section_id": 1,
+                "custom_name": null,
+                "status": 1,
+                "created_at": null,
+                "updated_at": null,
+                "pivot": {
+                    "event_id": 1,
+                    "event_type_section_id": 4,
+                    "name": "Te invitamos"
+                },
+                "section": {
+                    "id": 1,
+                    "name": "presentacion",
+                    "default_title": "Te invitamos",
+                    "created_at": null,
+                    "updated_at": null
+                }
+            },
+            {
+                "id": 12,
+                "event_type_id": 3,
+                "event_section_id": 5,
+                "custom_name": null,
+                "status": 1,
+                "created_at": null,
+                "updated_at": null,
+                "pivot": {
+                    "event_id": 1,
+                    "event_type_section_id": 12,
+                    "name": "Padrinos"
+                },
+                "section": {
+                    "id": 5,
+                    "name": "padrinos",
+                    "default_title": "Padrinos",
+                    "created_at": null,
+                    "updated_at": null
+                }
+            }
+        ]
+    }
+}
