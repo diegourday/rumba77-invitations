@@ -104,6 +104,52 @@
             />
         </section>
 
+        <section class="invite__parents" v-if="event.godparents == true && event.type.godparents">
+            <h2 class="invite__subtitle">Padrinos</h2>
+            <div class="invite__parents-content">
+                <img
+                    class="invite__parents-image"
+                    src="/img/event/evento_matrimonio_2/godparents.svg"
+                />
+                <div class="invite__parents-wrap">
+                    <div
+                        v-for="related in event.family"
+                        v-show="related && related.type && related.type.name == 'Padrino'"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            :fill="`var(--point1)`"
+                        >
+                            <path
+                                d="M480-280q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Zm0 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                            />
+                        </svg>
+                        <span class="invite__parents-name" v-text="related.name"></span>
+                    </div>
+                    <div
+                        v-for="related in event.family"
+                        v-show="related && related.type && related.type.name == 'Madrina'"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            :fill="`var(--point2)`"
+                        >
+                            <path
+                                d="M480-280q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Zm0 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                            />
+                        </svg>
+                        <span class="invite__parents-name" v-text="related.name"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="invite__info" v-if="event.info.length > 0">
             <h2 class="invite__subtitle">{{ event.customSectionsData.informacion }}</h2>
             <div class="invite__info-content">
@@ -143,7 +189,7 @@
 
         <footer-for-template
             :logo_color="'#ffffff'"
-            :background="'var(--pink)'"
+            :background="'var(--primary)'"
             :text_color="'var(--white)'"
         ></footer-for-template>
         <div class="modal-shadow blur" v-show="modalactive">
@@ -430,12 +476,10 @@ export default {
     --black: #444444;
     --white: #ffffff;
     --background-color: #ffefef;
-    --pink: #ff9393;
-    --pink-dark: #ff6f6f;
-    --pink-secondary: #ff4e79;
-    --dark-blue: #031927;
-    --light-blue: #1b5fea;
-    --blue: #0d3072;
+    --primary: #fd8383;
+    --primary-dark: #ff6a6a;
+    --point1: #3395cd;
+    --point2: #cd4973;
     width: 100%;
     margin: 0 auto;
     padding: 0;
@@ -508,7 +552,7 @@ export default {
 .invite__date {
     font-size: 1.3rem;
     font-family: 'Playfair', sans-serif;
-    background-color: var(--pink);
+    background-color: var(--primary);
     color: var(--white);
     padding: 2px 12px;
     border-radius: 100vmax;
@@ -518,7 +562,7 @@ export default {
 
 .invite__image--main {
     /*  height: 360px;*/
-    margin-top: 120px;
+    margin-top: 100px;
     /* margin-top: 64px; */
     opacity: 0;
     animation: scaleIn 0.6s ease-out forwards 0.4s;
@@ -552,7 +596,7 @@ export default {
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 50%;
-    border: 6px solid var(--pink);
+    border: 6px solid var(--primary);
 }
 
 .invite__profile-text {
@@ -652,6 +696,43 @@ export default {
     height: 160px;
 }
 
+/* INVITE GODPARENTS */
+.invite__parents {
+    display: grid;
+    justify-items: center;
+    gap: 50px;
+    padding: 40px 20px;
+}
+
+.invite__parents-content {
+    display: grid;
+    justify-items: center;
+    gap: 40px;
+}
+
+.invite__parents-image {
+    height: 320px;
+}
+
+.invite__parents-wrap {
+    font-weight: 600;
+    border-radius: 12px;
+    display: grid;
+    gap: 8px;
+}
+
+.invite__parents-wrap div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.invite__parents-name {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+}
+
 /* INVITE INFO */
 .invite__info {
     display: grid;
@@ -672,7 +753,7 @@ export default {
     padding: 36px 30px;
     text-align: center;
     width: 280px;
-    background-color: var(--pink);
+    background-color: var(--primary);
     border-bottom: 5px solid var(--white);
     box-shadow: var(--shadow);
     border-radius: 20px;
@@ -725,7 +806,7 @@ export default {
 .invite__photos-card {
     width: 100%;
     object-fit: cover;
-    border: 6px solid var(--pink);
+    border: 6px solid var(--primary);
     border-radius: 16px;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -774,27 +855,28 @@ export default {
     border-radius: 32px;
 }
 .btn-close-modal {
-    background: var(--pink);
+    background: var(--primary);
+    transition: background-color 0.2s ease;
 }
 .btn-close-modal:hover {
-    background: var(--pink-dark);
+    background: var(--primary-dark);
 }
 .modal-shadow {
     background-color: rgba(0, 0, 0, 0.65);
 }
 .modal-icon-float {
-    background: var(--pink);
+    background: var(--primary);
     box-sizing: content-box;
 }
+
+@media (max-height: 420px) {
+    .invite__header {
+        height: auto;
+    }
+}
+
 @media (min-width: 412px) {
     /* INVITE HEADER */
-    .invite__text-header {
-        font-size: 1.15rem;
-    }
-
-    .invite__name {
-        font-size: 2.1rem;
-    }
 
     .invite__text-celebrar {
         font-size: 1.15rem;
@@ -805,21 +887,13 @@ export default {
     }
 
     .invite__image--main {
-        /*    height: 380px;*/
+        height: 380px;
         margin-top: 90px;
     }
 }
 
 @media (min-width: 520px) {
     /* INVITE HEADER */
-    .invite__text-header {
-        font-size: 1.15rem;
-    }
-
-    .invite__name {
-        font-size: 2.5rem;
-    }
-
     .invite__text-celebrar {
         font-size: 1.15rem;
     }
@@ -843,7 +917,7 @@ export default {
 
     /* INVITE ABSOLUTE */
     .invite__disco-img {
-        height: 150px;
+        height: 120px;
     }
 
     /* INVITE PROFILE */
@@ -921,7 +995,7 @@ export default {
     }
 
     .invite__image--main {
-        height: 300px;
+        height: 360px;
     }
 }
 

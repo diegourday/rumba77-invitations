@@ -8,7 +8,7 @@
         "profile_photo": "1_1722992471.jpg",
         "name": "Jhonatan & Karem",
         "gender": 0,
-        "title": "Matrimonio",
+        "title": "Nuestra Boda",
         "subtitle": "Se celebrará",
         "description": "Hola, ya llega el gran día y esperamos que nos puedan acompañar en este día tan lindo. Aquí podrán encontrar toda la información del evento.",
         "address": "Lima, Cañete, San Luis - CPM Santa Barbara",
@@ -31,7 +31,7 @@
         "timeforhumans": "06:00 PM",
         "profileaws": "https://img.freepik.com/free-photo/portrait-modern-couple-home_23-2148115830.jpg?t=st=1728000940~exp=1728004540~hmac=ab49f35a21a5449dca394ec1fc867475a44ea9ebf0a90675dcc08bc232abd771&w=740",
         "parents": true,
-        "godparents": false,
+        "godparents": true,
         "customSectionsData": {
             "padres": "Padres",
             "fotos": "Fotos",
@@ -118,7 +118,7 @@
                 "updated_at": null,
                 "type": {
                     "id": 2,
-                    "name": "Mamá",
+                    "name": "Madrina",
                     "created_at": null,
                     "updated_at": null
                 }
@@ -133,7 +133,7 @@
                 "updated_at": null,
                 "type": {
                     "id": 1,
-                    "name": "Papá",
+                    "name": "Padrino",
                     "created_at": null,
                     "updated_at": null
                 }
