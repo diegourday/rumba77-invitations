@@ -3,27 +3,27 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref } from 'vue';
-import lottie from 'lottie-web';
+import { defineComponent, onMounted, ref } from 'vue'
+import lottie from 'lottie-web'
 
 export default defineComponent({
   name: 'LottieAnimation',
   props: {
     src: {
       type: String,
-      required: true,
+      required: true
     },
     loop: {
       type: Boolean,
-      default: true,
+      default: true
     },
     autoplay: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   setup(props) {
-    const lottieContainer = ref(null);
+    const lottieContainer = ref(null)
 
     onMounted(() => {
       lottie.loadAnimation({
@@ -31,20 +31,20 @@ export default defineComponent({
         renderer: 'svg',
         loop: props.loop,
         autoplay: props.autoplay,
-        path: props.src,
-      });
-    });
+        path: props.src
+      })
+    })
 
     return {
-      lottieContainer,
-    };
-  },
-});
+      lottieContainer
+    }
+  }
+})
 </script>
 
 <style scoped>
 div {
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
 }
 </style>
