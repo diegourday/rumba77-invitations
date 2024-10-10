@@ -1,7 +1,8 @@
 <template>
   <div class="invite" v-if="event">
     <img
-      class="invite__disco-img"
+      :class="{ 'invite__disco-img': startAnimations }"
+      class="rbimg"
       src="/img/event/evento_matrimonio_2/roses-top.svg"
       alt="Bola de Discoteca"
     />
@@ -11,22 +12,22 @@
         <div class="invite__event-details-wrap">
           <div class="invite__text-wrap">
             <p class="invite__text-header">{{ event.title }}</p>
-            <h1 class="invite__name">{{ event.name }}</h1>
+            <h1 :class="{ invite__name: startAnimations }">{{ event.name }}</h1>
           </div>
-          <p class="invite__text-celebrar">{{ event.subtitle }}</p>
+          <p :class="{ 'invite__text-celebrar': startAnimations }">{{ event.subtitle }}</p>
           <p
-            class="invite__date"
+            v-if="today != null"
+            :class="{ invite__date: startAnimations }"
             v-text="
               pastevent == true && today == false ? event.dateforhumans : event.dateforhumans2
             "
           ></p>
         </div>
-        <!-- <img
-          class="invite__image--main"
-          src="/img/event/evento_matrimonio_2/main-img.svg"
-          alt="Celebración"
-        /> -->
-        <lottie class="invite__image--main" src="/img/event/evento_matrimonio_2/main-img.json" />
+        <lottie
+          :class="{ 'invite__image--main': startAnimations }"
+          class="rbimg"
+          src="/img/event/evento_matrimonio_2/main-img.json"
+        />
       </div>
     </section>
 
@@ -45,7 +46,7 @@
 
     <section class="invite__countdown">
       <img
-        class="invite__countdown-img"
+        class="invite__countdown-img rbimg"
         src="/img/event/evento_matrimonio_2/rose-crown.svg"
         alt="Chat"
       />
@@ -149,6 +150,7 @@
           @mouseover="info.shake = true"
           @mouseleave="info.shake = false"
           @click.stop="viewinfo(info)"
+          :id="'info_' + info.id"
         >
           <div class="icon">
             <SvgIcon
@@ -172,6 +174,7 @@
           @click.stop="viewphoto(file)"
           :src="file.url"
           :alt="'Imagen ' + index"
+          :id="'photo_' + file.id"
         />
       </div>
     </section>
@@ -181,7 +184,7 @@
       :background="'var(--primary)'"
       :text_color="'var(--white)'"
     ></footer-for-template>
-    <div class="modal-shadow blur" v-show="modalactive">
+    <div class="modal-shadow blur" v-show="modal.active">
       <div
         class="modal-container"
         :class="modal.name == 'photo' ? 'bg-zero padding-0' : modal.size"
@@ -242,20 +245,16 @@ export default {
       minutes: '00',
       seconds: '00',
       interval: null,
-      info: null,
-      photo: null,
       pastevent: false,
       pastoday: false,
       today: null,
       observer: null,
-      modal: {
-        name: null,
-        size: 'lg'
-      },
-      filterColor: '#FF9393'
+      filterColor: 'var(--red)',
+      fontsLoaded: false,
+      imagesLoaded: false
     }
   },
-  props: ['event', 'modalactive'],
+  props: ['event', 'modal', 'photo', 'info', 'startAnimations'],
   mounted() {
     const page = this.$refs.page
     if (this.event) {
@@ -263,10 +262,7 @@ export default {
     }
 
     this.calculateTimeLeft()
-    this.$nextTick(() => {
-      // Emite el evento 'loaded' cuando todo esté listo
-      this.$emit('loaded')
-    })
+    this.monitorFontsAndImages()
     // ACIVAR CUANDO LISTA DE REGALOS ESTE DISPONIBLE
     // this.initialPosition = this.$refs.quickAccess.getBoundingClientRect().top
     // page.addEventListener('scroll', this.handleScroll);
@@ -338,21 +334,16 @@ export default {
       })
     },
     viewinfo(info) {
-      this.info = info
-      this.info.detail = info.detail.replace(/\n/g, '<br>')
-      this.modal.name = 'info'
-      this.modal.size = 'md'
-      this.storeview(this.info.id)
-      this.activemodal()
+      this.$router.push({
+        name: 'EventModalInfo',
+        params: { name: this.$route.params.name, infoid: info.id }
+      })
     },
     viewphoto(file) {
-      this.photo = file
-      this.modal.name = 'photo'
-      this.modal.size = 'lg'
-      this.activemodal()
-    },
-    activemodal() {
-      this.$router.push({ name: 'EventModal', params: { name: this.$route.params.name } })
+      this.$router.push({
+        name: 'EventModalPhoto',
+        params: { name: this.$route.params.name, photoid: file.id }
+      })
     },
     closedrop() {
       this.closemodal()
@@ -361,7 +352,7 @@ export default {
       this.$router.push({ name: 'EventPublic', params: { name: this.$route.params.name } })
     },
     handleDocumentClick(event) {
-      if (this.modalactive) {
+      if (this.modal.active) {
         this.closemodal()
       }
     },
@@ -434,15 +425,52 @@ export default {
       const url = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${title}&dates=${start}/${end}&details=${details}&location=${location}`
       window.open(url, '_blank')
     },
-    storeview: _.throttle(function (id) {
-      // const params = {
-      //     id: id,
-      //     DevId: localStorage.getItem('deviceId'),
-      //     OS: localStorage.getItem('OS'),
-      //     type: localStorage.getItem('usertype')
-      // }
-      // axios.post('/report_ininfo', params).then((response) => {})
-    }, 3000)
+    monitorFontsAndImages() {
+      this.monitorFonts()
+      this.monitorImages()
+    },
+    monitorFonts() {
+      document.fonts.ready.then(() => {
+        this.fontsLoaded = true
+        this.checkLoadingStatus() // Verifica si todo está cargado
+      })
+    },
+    monitorImages() {
+      const images = document.querySelectorAll('rbimg')
+      let loadedImagesCount = 0
+
+      images.forEach((img) => {
+        if (img.complete) {
+          loadedImagesCount++
+        } else {
+          img.addEventListener('load', () => {
+            loadedImagesCount++
+            if (loadedImagesCount === images.length) {
+              this.imagesLoaded = true
+              this.checkLoadingStatus()
+            }
+          })
+          img.addEventListener('error', () => {
+            loadedImagesCount++
+            if (loadedImagesCount === images.length) {
+              this.imagesLoaded = true
+              this.checkLoadingStatus()
+            }
+          })
+        }
+      })
+
+      if (loadedImagesCount === images.length) {
+        this.imagesLoaded = true
+        this.checkLoadingStatus()
+      }
+    },
+    checkLoadingStatus() {
+      if (this.fontsLoaded && this.imagesLoaded) {
+        // Emitir evento cuando todo esté cargado
+        this.$emit('loaded')
+      }
+    }
   },
   computed: {
     dayLabel() {
@@ -595,6 +623,10 @@ export default {
   justify-content: center;
   padding: 40px 20px;
   position: relative;
+}
+
+.invite__countdown-img {
+  height: 330px;
 }
 
 .time-wrapper {
