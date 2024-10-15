@@ -1,6 +1,6 @@
 <template>
   <div>
-    <evento-matrimonio
+    <evento-quinceanero
       v-if="currentComponent"
       :is="currentComponent"
       :event="event"
@@ -9,7 +9,7 @@
       :photo="photo"
       @loaded="handleChildLoaded"
       :start-animations="!loader"
-    ></evento-matrimonio>
+    ></evento-quinceanero>
   </div>
 </template>
 
@@ -19,15 +19,17 @@ import CumpleanosHombre from '@/views/cumpleanos_hombre_2.vue'
 import EventoReligioso from '@/views/evento_religioso_1.vue'
 import EventoNavideno from '@/views/evento_navideno_2.vue'
 import EventoMatrimonio from '@/views/evento_matrimonio_2.vue'
+import EventoQuinceanero from '@/views/evento_quinceanero_2.vue'
 import _ from 'lodash'
-import eventData from '@/utils/evento_matrimonio.json'
+import eventData from '@/utils/evento_quinceanero.json'
 export default {
   components: {
     'cumpleanos-mujer': CumpleanosMujer,
     'cumpleanos-hombre': CumpleanosHombre,
     'evento-religioso': EventoReligioso,
     'evento-navideno': EventoNavideno,
-    'evento-matrimonio': EventoMatrimonio
+    'evento-matrimonio': EventoMatrimonio,
+    'evento-quinceanero': EventoQuinceanero
   },
   data() {
     return {
